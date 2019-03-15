@@ -1,0 +1,7 @@
+20201 Best_picture "La_La_Land"
+20075 Lead_actor Casey_Affleck,_"Manchester_by_the_Sea"
+20096 Best_picture "Hell_or_High_Water"
+20246 Lead_actor Viggo_Mortensen,_"Captain_Fantastic"
+20127 Best_picture "Hell_or_High_Water"
+20172 Supporting_actor Dev_Patel,_"Lion"
+20179 Supporting_actress Octavia_Spencer,_"Hidden_Figures"

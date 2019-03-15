@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- saved from url=(0092)https://tutoria.ualg.pt/2018/pluginfile.php/147502/mod_resource/content/3/O%CC%81scares.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" type="text/css" href="./Óscares_files/style.css">
+		<title>Óscares</title>
+	</head>
+<body>
+<h1>Óscares</h1>
+
+<figure><img src="./Óscares_files/oscars_shallow.jpg"></figure>
+
+<p>Este ano a cerimónia de entrega dos óscares foi mais animada do que o costume, com aquela <em>gaffe</em> monumental na entrega do prémio para o melhor filme.</p>
+
+<p>Os óscares são organizados anualmente pela Academia das Artes e Ciências do Cinema, em inglês, <em>Academy of Motion Picture Arts and Sciences</em>. A Academia faz gala de que o processo de votação é sempre realizado de forma rigorosa e secreta, para que ninguém saiba os resultados até à altura em que são anunciados, exceto os dois funcionários da empresa de auditoria que terão sido encarregados de fazer o apuramento. Parece que até nem se usam computadores ligados à Internet, para não correr o risco de que alguém se infiltre e roube as informações.</p>
+
+<p>Depois do fiasco deste ano, não admirará que a firma de auditoria habitual seja dispensada. Assim, temos a nossa grande oportunidade de fabricar um programa de apuramento dos resultados e tentar vendê-lo à Academia, para ser usado no ano que vem, e nos anos a seguir a esse, bem entendido.</p>
+
+<p>O nosso programa deve fazer o apuramento dos resultados, a partir dos votos dos membros da Academia. Os membros da Academia são escolhidos por convite, entre profissionais do cinema de todo o mundo, ainda que a maioria sejam norte-americanos. Atualmente, a Academia tem cerca de 6000 membros, mas o número deve aumentar nos próximos anos, para poder haver mais mulheres e mais elementos provenientes de minorias sociológicas, à americana.</p>
+
+<p>Numa primeira fase, os membros da Academia realizam uma votação aberta para escolher os <em>nomeados</em>, em cada uma das <em>categorias</em>: melhor filme, melhor realizador, melhor ator num papel principal, melhor atriz num papel principal, melhor canção, melhor argumento original, etc. Depois há uma segunda votação, entre os nomeados, e é dessa votação que saem os vencedores, em cada categoria.</p>
+
+<h2>Primeira tarefa: Ler e Escrever</h2>
+
+<p>Por hipótese, dispomos do ficheiro das votações, um ficheiro secretíssimo que reúne em formato digital todos os votos de todos os membros da academia. Nesse ficheiro, cada linha representa um voto e contém três elementos de informação: o número de membro do membro votante, a categoria e o nomeado votado (nessa categoria). O número de membro é um número inteiro positivo que identifica univocamente cada membro, a categoria é uma cadeia de caracteres sem espaços e o nomeado também. Eis um exemplo de um troço desse ficheiro, para os óscares de 2017:</p>
+
+<pre><code>20201 Best_picture “La_La_Land”
+20075 Lead_actor Casey_Affleck,_“Manchester_by_the_Sea”
+20096 Best_picture “Hell_or_High_Water”
+20246 Lead_actor Viggo_Mortensen,_“Captain_Fantastic”
+20127 Best_picture “Hell_or_High_Water”
+20172 Supporting_actor Dev_Patel,_“Lion”
+20179 Supporting_actress Octavia_Spencer,_“Hidden_Figures”
+</code></pre>
+
+<p>Observamos que, como de costume, se usam sublinhados em vez de espaços nas cadeias de caracteres para as categorias e para os nomeados.</p>
+
+<p>Note que, exceto no caso do melhor filme, o nome dos nomeados vêm acompanhados do nome do filme. É mesmo assim. Aliás, nalgumas categorias os nomeados são por vezes um grupo de profissionais, e não apenas um. Eis, como exemplo, a linha que poderia corresponder ao voto do membro número 20159 na categoria de canção original:</p>
+
+<pre><code>20159 Original_song “Can’t_Stop_the_Feeling,”_“Trolls”_—_Music_and_Lyric_by_Justin_Timberlake,_Max_Martin_and_Karl_Johan_Schuster
+</code></pre>
+
+<p>Escreva um programa que leia este ficheiro, da consola para um array de estruturas apropriado às circunstâncias do problema, e que, no fim, escreva o conteúdo do array na consola, com o valor de cada campo entre parêntesis retos. Eis um exemplo do troço de output correspondente àquele troço de input acima:</p>
+
+<pre><code>[20201][Best_picture][“La_La_Land”]
+[20075][Lead_actor][Casey_Affleck,_“Manchester_by_the_Sea”]
+[20096][Best_picture][“Hell_or_High_Water”]
+[20246][Lead_actor][Viggo_Mortensen,_“Captain_Fantastic”]
+[20127][Best_picture][“Hell_or_High_Water”]
+[20172][Supporting_actor][Dev_Patel,_“Lion”]
+[20179][Supporting_actress][Octavia_Spencer,_“Hidden_Figures”]
+</code></pre>
+
+<p>Prepare o seu programa para o caso de haver até 20000 membros, até 50 categorias e até 100000 votos. Cada membro pode votar em várias categorias mas nunca mais do que uma vez em cada categoria. Nem todos os membros votam em todas as categorias.</p>
+
+<p>Submeta no problema A.</p>
+
+<h2>Segunda tarefa: Validar os votos</h2>
+
+<p>Não vá o diabo tecê-las, é prudente validar exaustivamente o ficheiro das votações. Ainda assim, hoje queremos apenas verificar que nenhum membro votou mais do que uma vez em cada categoria.</p>
+
+<p>Escreva um programa que leia da consola o ficheiro com a votação e que escreva na consola todos os votos de um mesmo membro numa categoria, nos casos que esse membro votou nessa categoria mais do que uma vez, no mesmo nomeado ou em nomeados diferentes. Esses votos repetidos devem vir ordenados pelo número de membro e, para cada membro, por ordem alfabética da categoria, e, para cada categoria, por ordem alfabética do nomeado e devem ser formatados como no problema anterior. Se não houver votos repetidos desses no ficheiro das votações, o programa deve escrever uma só linha com a mensagem “(void)” (sem as aspas).</p>
+
+<p>Submeta no problema B.</p>
+
+<h2>Terceira tarefa: Contar os votos</h2>
+
+<p>Escreva um programa que leia o ficheiro das votações, cujo nome é dado na linha de comando, e que depois aceite da consola uma sequência de linhas, até ao fim dos dados, cada linha identificando uma categoria. Para cada categoria lida, o programa escreverá na consola o resultado da votação para essa categoria, por ordem decrescente de número de votos (e por ordem alfabética em caso de empate). Em cada linha virá o nomeado e o número de votos que recebeu nessa categoria, separados por um espaço, isto apenas para os nomeados que tenham tido pelo menos um voto nessa categoria. No caso de a categoria ser inexistente, isto é, no caso de não haver votos para essa categoria, o programa deve escrever uma linha com a mensagem “(void)” (sem as aspas).</p>
+
+<p>Note que neste problema o ficheiro das votações é acedido por meio do seu nome, que é dado na linha de comando, e não da consola, como nos dois problemas anteriores. Note também os valores escritos (nomeado e número de votos) não vêm entre parêntesis retos, ao contrário do que acontecia nos outros dois problemas.</p>
+
+<p>Submeta no problema C.</p>
+
+
+
+
+
+</body></html>
