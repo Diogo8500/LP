@@ -295,12 +295,17 @@ void sl_list_sort(SL_LIST list, int (*cmp)(const void*, const void*))
 	SL_IT it = sl_list_it_new(list);
 	sl_it_reset(it);
 	size_t i=0;
-	while(sl_it_hasNext)
+	while(sl_it_hasNext(it))
 		array[i++] = (char*)sl_it_next(it);
 	v_mergeSort(array, i, sizeof(char*), cmp);
-	///////////
-	//////
-	////
+	sl_it_delete(it);
+	i=0;
+	S_NODE aux = list->head;
+	while(aux)
+	{
+		s_node_set(aux, array[i++]);
+		aux = s_node_get_link(aux);
+	}
 }
 size_t sl_list_size(SL_LIST list)
 {

@@ -99,9 +99,10 @@ void* sl_it_next(SL_IT list_it);
  */
 
 typedef struct _double_linked_list *DL_LIST;
+typedef struct _double_linked_it *DL_IT;
 
 DL_LIST dl_list_new();
-void dl_list_delete(DL_LIST list, void (*f)(const void*));
+void dl_list_delete(DL_LIST list, void (*destructor)(const void*));
 
 /*
  * End of function declarations for DOUBLE LINKED lists

@@ -1,5 +1,5 @@
 /*
- * insertionSort.h
+ * my_sort.h
  *
  *  Created on: Mar 19, 2019
  *      Author: Diogo
